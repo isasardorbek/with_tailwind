@@ -1,0 +1,40 @@
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#	<head>#}
+{#		<meta charset="UTF-8" />#}
+{#		<meta name="viewport" content="width=device-width, initial-scale=1.0" />#}
+{#		<script src="https://cdn.tailwindcss.com"></script>#}
+{#		<title>Student management</title>#}
+{#	</head>#}
+{#	<body>#}
+{#		<form action="" method="post">#}
+{#			{% csrf_token %} {{ form }}#}
+{#			<button type="submit">Ro'yxatdan o'tish</button>#}
+{#		</form>#}
+{#		<script src="{% static 'script.js' %}"></script>#}
+{#	</body>#}
+{#</html>#}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student management</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="bg-gray-100 p-4">
+    <form action="" method="post" class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Ro'yxatdan o'tish
+        </button>
+    </form>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
